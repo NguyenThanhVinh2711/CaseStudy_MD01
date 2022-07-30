@@ -16,15 +16,22 @@ body {
     background-image: url("CaseStudy_Module1_images/vutru.png");
 }
 
-#ong {
+#pipe1 {
     position: absolute;
     width: 50px;
     height: 50%;
     background-image: url("CaseStudy_Module1_images/ongduoi.png");
     transform: rotate(180deg);
 }
+#bg {
+    height: 571px;
+    width: 900px;
+    border: 4px solid blue;
+    position: absolute;
+    z-index: 1000;
+}
 
-#ong2 {
+#pipe2 {
     position: absolute;
     width: 50px;
     height: 30%;
@@ -32,9 +39,14 @@ body {
     background-image: url("CaseStudy_Module1_images/ongduoi.png");
 }
 
-.ong1 {
+.obs {
     left: 95%;
-    animation: move 3s ease-in-out infinite;
+    animation: move 4s ease-in-out infinite;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.obs_start {
+    left: 95%;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -52,10 +64,11 @@ body {
     position: absolute;
     top: 200px;
     left: 90px;
+    z-index: 100;
 }
-
 #score {
-    font-size: 60px;
+    font-size: x-large;
+    font-weight: bold;
     margin-left: 2%;
     margin-top: 2%;
     color: #7FFFD4
