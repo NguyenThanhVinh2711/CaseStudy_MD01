@@ -4,13 +4,13 @@
 var pipe1_height;
 var hole1_height;
 var score = 0
-// setInterval(() => {
-//     pipe1_height = Math.floor(Math.random() * 10) + 30;
-//     hole1_height = Math.floor(Math.random() * 20) + 10;
-//     document.getElementById("pipe1").style.height = pipe1_height + "%";
-//     document.getElementById("pipe2").style.top = pipe1_height + hole1_height + "%";
-//     document.getElementById("pipe2").style.height = 100 - (pipe1_height + hole1_height) + "%";
-// }, 4000);
+setInterval(() => {
+    pipe1_height = Math.floor(Math.random() * 10) + 30;
+    hole1_height = Math.floor(Math.random() * 20) + 10;
+    document.getElementById("pipe1").style.height = pipe1_height + "%";
+    document.getElementById("pipe2").style.top = pipe1_height + hole1_height + "%";
+    document.getElementById("pipe2").style.height = 100 - (pipe1_height + hole1_height) + "%";
+}, 4500);
 
 //lấy vị trí,css của bird rồi gán cho x, tốc độ rơi của bird , tạo "điều kiện thua"
 
