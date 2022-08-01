@@ -1,23 +1,23 @@
 //Ống di chuyển và ramdom vị trí của ống
 
 
-    var pipe1_height;
-    var hole1_height;
-    setInterval(() => {
-        pipe1_height = Math.floor(Math.random() * 10) + 30;
-        hole1_height = Math.floor(Math.random() * 20) + 10;
-        document.getElementById("pipe1").style.height = pipe1_height + "%";
-        document.getElementById("pipe2").style.top = pipe1_height + hole1_height + "%";
-        document.getElementById("pipe2").style.height = 100 - (pipe1_height + hole1_height) + "%";
-    }, 40000);
-
-
+var pipe1_height;
+var hole1_height;
+var score = 0
+// setInterval(() => {
+//     pipe1_height = Math.floor(Math.random() * 10) + 30;
+//     hole1_height = Math.floor(Math.random() * 20) + 10;
+//     document.getElementById("pipe1").style.height = pipe1_height + "%";
+//     document.getElementById("pipe2").style.top = pipe1_height + hole1_height + "%";
+//     document.getElementById("pipe2").style.height = 100 - (pipe1_height + hole1_height) + "%";
+// }, 4000);
 
 //lấy vị trí,css của bird rồi gán cho x, tốc độ rơi của bird , tạo "điều kiện thua"
 
 var bird = document.getElementById("bird")
-function run() {
 
+//Hàm điều kiện thua và cho con chim rơi xuống
+function run() {
     setInterval(() => {
         var x = parseInt(window.getComputedStyle(bird).getPropertyValue("top"));
         if (x <= 555) {
@@ -30,16 +30,14 @@ function run() {
     }, 30);
 
 //tăng điểm
-
     setInterval(() => {
         score++
         document.getElementById("scr").innerHTML = score;
     }, 500)
 }
 
-var score = 0
-let playgame = 'start'
-let speed = 0
+
+//Cho con chim bay lên
 
 function jump() {
     var fly = parseInt(window.getComputedStyle(bird).getPropertyValue("top"));
@@ -48,21 +46,10 @@ function jump() {
     }
 }
 
-//bắt đầu trò chơi
-
-function play() {
-    if (playgame == 'start') {
-        playgame = 'play'
-    }
-    if (playgame == 'play') {
-        document.getElementById("bg").style.display = "none"
-    }
-}
-
 //khởi động bắt đầu trò chơi
 document.addEventListener('mousedown', event => {
 
-    var  bg = document.getElementById("bg")
+    var bg = document.getElementById("bg")
     var pipestart1 = document.getElementById("pipe1")
     var pipestart2 = document.getElementById("pipe2")
     bg.style.display = "none"
@@ -80,7 +67,6 @@ document.addEventListener('keydown', event => {
         }
     }
 )
-
 
 
 //conditon loss( điều kiện thua)
@@ -102,9 +88,8 @@ setInterval(() => {
             return;
         }, 1);
         window.location.reload();
-    }
-    else if (check(document.getElementById("bird"), document.getElementById("pipe2"))) {
-        bird.style.bottom = document.getElementById("bird").getBoundingClientRect()  + "px";
+    } else if (check(document.getElementById("bird"), document.getElementById("pipe2"))) {
+        bird.style.bottom = document.getElementById("bird").getBoundingClientRect() + "px";
         setTimeout(() => {
             alert("You Lost !! Your Score is : " + score);
             return;
